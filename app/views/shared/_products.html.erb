@@ -1,0 +1,123 @@
+<% provide(:title,("Home")) %>
+  <div class="container">
+    <div class="row">
+      <!-- Carousel -->
+      <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+          <div class="item active">
+            <%= image_tag("shop.jpeg", :alt => "rss feed" , class: "img2") %>
+            <div class="header-text hidden-xs">
+              <div class="col-md-12 text-center">
+                <h2 style="color:white">
+                  <span><%= link_to image_tag("prod1.jpg",size:"64x64" , alt: "Shop logo"), 'http://rubyonrails.org/' %>
+                    Welcome to
+                    <strong>Dope Shop</strong>
+                  </span>
+                </h2>
+                <br>
+
+                <br>
+              </div>
+            </div>
+            <!-- /header-text -->
+          </div>
+          <div class="item">
+            <%= image_tag("prod2.jpg", :alt => "rss feed" , class: "img2") %>
+            <div class="header-text hidden-xs">
+              <div class="col-md-12 text-center">
+                <h2 style="color:white">
+                  <span>Best products on best prices!</span>
+                </h2>
+                <br>
+                <br>
+                <!-- <div class=""> <a class="btn btn-theme btn-sm btn-min-block" href="#">Login</a> <a class="btn btn-theme btn-sm btn-min-block" href="#">Register</a> </div> -->
+              </div>
+            </div>
+            <!-- /header-text -->
+          </div>
+          <div class="item">
+            <%= image_tag("prod3.jpg", :alt => "rss feed" , class: "img2") %>
+            <div class="header-text hidden-xs">
+              <div class="col-md-12 text-center">
+                <h2 style="color:white">
+                  <span>Start exploring</span>
+                </h2>
+                <br>
+                <br>
+              </div>
+            </div>
+            <!-- /header-text -->
+          </div>
+        </div>
+                  <div class="item">
+            <%= image_tag("prod3.jpg", :alt => "rss feed" , class: "img2") %>
+            <div class="header-text hidden-xs">
+              <div class="col-md-12 text-center">
+                <h2 style="color:white">
+                  <span>Start exploring</span>
+                </h2>
+                <br>
+                <br>
+              </div>
+            </div>
+            <!-- /header-text -->
+          </div>
+        </div>
+                  <div class="item">
+            <%= image_tag("prod3.jpg", :alt => "rss feed" , class: "img2") %>
+            <div class="header-text hidden-xs">
+              <div class="col-md-12 text-center">
+                <h2 style="color:white">
+                  <span>Start exploring</span>
+                </h2>
+                <br>
+                <br>
+              </div>
+            </div>
+            <!-- /header-text -->
+          </div>
+        </div>
+                  <div class="item">
+            <%= image_tag("prod3.jpg", :alt => "rss feed" , class: "img2") %>
+            <div class="header-text hidden-xs">
+              <div class="col-md-12 text-center">
+                <h2 style="color:white">
+                  <span>Start exploring</span>
+                </h2>
+                <br>
+                <br>
+              </div>
+            </div>
+            <!-- /header-text -->
+          </div>
+        </div>
+      </div>
+      <!-- /carousel -->
+    </div>
+  </div>
+  <% if false %>
+    <% if user_signed_in? %>
+      <div class="row">
+        <div class="col-md-8">
+          <h3>Micropost Feed</h3>
+          <%= render 'shared/feed' %>
+        </div>
+      </div>
+    <%end %>
+    <%# else %><% end %>
+    <% if !user_signed_in? %>
+      <div class="center jumbotron">
+        <% if !user_signed_in? %>
+          <%= link_to "Log in", new_user_session_path, class: "btn btn-lg btn-success" %>
+          <strong >
+            or
+          </strong>
+          <%= link_to "Sign up", signup_path, class: "btn btn-lg btn-primary" %>
+        <% end %>
+      </div>
+    <%end %>
+
+    <%# end %>

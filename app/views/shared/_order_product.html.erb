@@ -1,0 +1,20 @@
+<li>
+
+  <%= link_to product do%>
+    <%= image_tag "no-image.jpeg", size:"64x64" %>
+<%end %>
+
+<strong>
+  Name :
+</strong>
+<%= product.name %>
+,<strong>
+  Description :
+</strong>
+<%= product.description %>
+<strong>
+  Price :
+</strong>
+<%= product.price %> $
+
+</li>

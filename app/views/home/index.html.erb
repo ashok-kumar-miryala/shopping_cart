@@ -1,0 +1,24 @@
+<% if user_signed_in? %> 
+ <div> Welcome <%= current_user.email %> </div>
+  <%= button_to "Sign out", destroy_user_session_path, method: :delete %> 
+ <div></div> 
+ <% provide(:title,("Products")) %>
+
+  <p id="notice"><%= notice %></p>
+
+  <div class="center jumbotron">
+      <%if current_user.admin? %>
+      <strong>Total Number of All Users Orders (  <%= link_to "#{@products.count}", products_url %> )</strong><br>
+      <% end %>
+      <strong>Number of User Orders Count ( <%= link_to "#{current_user.orders.count}", orders_url(current_user) %> )</strong><br>
+      <strong>Cart Items( <%= link_to "#{@cart_items.count}", cart_path(current_user) %> )</strong>
+
+
+  </div>
+
+  <%= render 'shared/products' %>
+  <div>
+<% else %>
+  <%= button_to "Sign in", new_user_session_path %> 
+<% end %>
+</div>
