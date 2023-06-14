@@ -6,9 +6,9 @@
     <% if params[:search].blank? %>
 
       <%if current_user.admin? %>
-        ADMIN --- All Orders (<%= @orders.count %>)
+        WELCOME ADMIN USER --- All Orders (<%= @orders.count %>)
       <%else%>
-        USER --- All Orders (<%= current_user.orders.count %>)
+        WELCOME USER --- All Orders (<%= current_user.orders.count %>)
       <%end%>
     <%else %>
       Found => [

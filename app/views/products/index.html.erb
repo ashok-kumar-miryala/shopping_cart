@@ -10,6 +10,7 @@
 
 <<p id="notice"><%= notice %></p>
 
+
 <h1>Products</h1>
 
 <table>
@@ -39,3 +40,7 @@
 <br>
 
 <%= link_to 'New product', new_product_path %>
+<div class="center jumbotron">
+          <div class="col-sm-12  col-md-4">
+          <%= button_to "Continue Shopping", root_path , class: "btn btn-block btn-light" , method: :get%>
+        </div>

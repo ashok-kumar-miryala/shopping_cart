@@ -1,11 +1,12 @@
-<!-- <% if user_signed_in? %> 
- <div> Welcome <%= current_user.email %> 
+<% if user_signed_in? && current_user.admin? %> 
+ <div> Welcome ADMIN <%= current_user.email %> 
   <%= render 'shared/user_info' %>
  </div> 
 
 
   <%= button_to "Sign out", destroy_user_session_path, method: :delete %> 
 <% else %>
+<div> Welcome User <%= current_user.email %> 
  <%= render 'shared/products' %>
   <%= button_to "Sign in", new_user_session_path %> 
-<% end %> -->
+<% end %>

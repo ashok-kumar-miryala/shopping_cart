@@ -1,5 +1,5 @@
-<% if user_signed_in? %> 
- <div> Welcome <%= current_user.email %> </div>
+<% if user_signed_in? && current_user.admin? %> 
+ <div> Welcome ADMIN <%= current_user.email %> </div>
   <%= button_to "Sign out", destroy_user_session_path, method: :delete %> 
  <div></div> 
  <% provide(:title,("Products")) %>
@@ -18,7 +18,16 @@
 
   <%= render 'shared/products' %>
   <div>
+
+
 <% else %>
-  <%= button_to "Sign in", new_user_session_path %> 
+
+<div> Welcome User <%= current_user.email %> </div>
+<strong>Number of Your Orders Count ( <%= link_to "#{current_user.orders.count}", orders_url(current_user) %> )</strong><br>
+ <%= button_to "Sign out", destroy_user_session_path, method: :delete %> 
+  <%= render 'shared/products' %>
+          <div class="col-sm-12  col-md-4">
+          <%= button_to "Continue Shopping", root_path , class: "btn btn-block btn-light" , method: :get%>
+        </div>
 <% end %>
 </div>
