@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
-	  before_action :authenticate_user, only: %i[create destroy add_quantity
-                                          reduce_quantity]
+	  # before_action :authenticate_user, only: %i[create destroy add_quantity
+                                          # reduce_quantity]
 
   def create
     # Find associated product and current cart
@@ -55,7 +55,7 @@ class ItemsController < ApplicationController
       # Iterate the item's quantity by one
       @item.quantity += 1
     else
-      @item = LineItem.new
+      @item = Item.new
       @item.cart = @current_cart
       @item.product = chosen_product
       # @item.order = Order.first

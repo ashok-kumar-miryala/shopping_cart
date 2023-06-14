@@ -1,11 +1,14 @@
 <div class="center jumbotron">
+          <div class="col-sm-12  col-md-4">
+          <%= button_to "Continue Shopping", root_path , class: "btn btn-block btn-light" , method: :get%>
+        </div>
   <h2>
     <% if params[:search].blank? %>
 
-      <%if !current_user.admin? %>
+      <%if current_user.admin? %>
         ADMIN --- All Orders (<%= @orders.count %>)
       <%else%>
-        <%= current_user.name %>  --- Your Orders (<%= current_user.orders.count %>)
+        USER --- All Orders (<%= current_user.orders.count %>)
       <%end%>
     <%else %>
       Found => [
@@ -20,9 +23,13 @@
 
     <%= render 'order' , :order => order%>
 
-    <% elsif order.user_id == @current_user.id %>
+    <% elsif order.user_id == current_user.id %>
 
       <%= render 'order' , :order => order%>
 
     <%end%>
   <% end %>
+
+          <div class="col-sm-12  col-md-4">
+          <%= button_to "Continue Shopping", root_path , class: "btn btn-block btn-light" , method: :get%>
+        </div>

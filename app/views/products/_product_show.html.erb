@@ -50,33 +50,13 @@
               <%# end %>
               <%else %>
 
-                <!-- See lineItem section below for explanation of line_item links -->
+                <!-- See lineItem section below for explanation of item links -->
                 <ul class="users">
-                  <!-- <li> -->
-                  <!-- <%#= link_to "Add one", line_item_add_path(:id => line_item), method: :post %> -->
-
-                  <!-- reduce -->
-                  <%=link_to line_item_reduce_path(:id =>@current_cart.line_items.find_by(product_id: product.id)) , method: :post, class: "btn btn-danger" , style: "margin-top:15px;" do %>
-                  <i class="glyphicon glyphicon-minus" style="color:black;"></i>
-                  Reduce
-                <% end %>
-
-                <!-- add -->
-                <%=link_to line_item_add_path(:id => @current_cart.line_items.find_by(product_id: product.id)) , method: :post , class: "btn btn-success" , style: "margin-top:15px;" do %>
-                <i class="glyphicon glyphicon-plus" style="color:black;"></i>
-                Add
-              <% end %>
-
-              <!-- Remove -->
-              <%=link_to line_item_path(@current_cart.line_items.find_by(product_id: product.id)) ,method: :delete ,class: "btn btn-warning" , style: "margin-top:15px;" do %>
-              <i class="glyphicon glyphicon-remove" style="color:black;"></i>
-              Remove Item
-            <% end %>
 
             <li>Quantity:
-              <%= @current_cart.line_items.find_by(product_id: product.id).quantity %>
+              <%= @current_cart.items.find_by(product_id: product.id).quantity %>
               | Total Price:
-              <%= number_to_currency(@current_cart.line_items.find_by(product_id: product.id).total_price) %>
+              <%= number_to_currency(@current_cart.items.find_by(product_id: product.id).total_price) %>
               <hr class="style18"/>
           </ul>
         <%end %>
